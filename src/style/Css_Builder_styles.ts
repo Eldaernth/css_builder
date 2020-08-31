@@ -11,6 +11,7 @@ export const Builder = styled.div`
 
 export const Menu = styled.div`
     flex:1;
+    background-color:#f2f6f8
 `
 
 export const CreateMenu = styled.div`
@@ -19,7 +20,10 @@ export const CreateMenu = styled.div`
 `
 export const ElementSelectContainer = styled.div`
     width:100%;
-    height:50vh;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    
 `
 
 export const Title = styled.h1``;
@@ -27,6 +31,8 @@ export const Title = styled.h1``;
 export const SelectableItem = styled.button`
     width:45%;
     min-height:3rem;
+    margin:5px 5px 5px 5px;
+    padding:5px;
     background-color:#e0eff9;
     border-radius:10px;
     border:none;

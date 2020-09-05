@@ -1,6 +1,6 @@
 import React from 'react'
 import {Container,Builder,Menu,CreateMenu,ElementSelectContainer,Title} from '../style/Css_Builder_styles'
-import SelectButton from '../component/SelectButton'
+import Helmet from "react-helmet"
 import {ElementContext} from '../context/ElementContext'
 import SelectElements from '../component/SelectElements'
 
@@ -10,6 +10,11 @@ function Css_Builder() {
 
     return (
         <Container>
+            <Helmet>
+                <title>Page builder</title>
+                <meta name="description" content="Create a page looks without programming."/>
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+            </Helmet>
             <Builder>
             {context?.element?.map((item)=>
              item.htmlElement)}

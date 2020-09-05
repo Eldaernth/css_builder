@@ -2,6 +2,7 @@ import React from 'react'
 import {Container,Builder,Menu,CreateMenu,ElementSelectContainer,Title} from '../style/Css_Builder_styles'
 import SelectButton from '../component/SelectButton'
 import {ElementContext} from '../context/ElementContext'
+import SelectElements from '../component/SelectElements'
 
 function Css_Builder() {
     const context = React.useContext(ElementContext);
@@ -18,8 +19,7 @@ function Css_Builder() {
                     <Title>Create Element</Title>  
                     <ElementSelectContainer>
                         {elementName.map((name)=>(
-                            <SelectButton text={`${name}`} 
-                            htmlElement={React.createElement(`${name.toLowerCase()}`,{key:`${context?.id}`},"Temp")}/>
+                            <SelectElements name={name} id={context?.id}/>
                         ))}
                     </ElementSelectContainer>
                 </CreateMenu>

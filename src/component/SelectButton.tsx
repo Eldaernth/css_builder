@@ -9,9 +9,9 @@ type Props = {
 
 function SelectButton({text,htmlElement}:Props) {
     const context  = React.useContext(ElementContext);
-    console.log(context?.elementMethods);
     return (
-        <SelectableItem onClick={()=>{(context?.elementMethods?.changeId());context?.elementMethods?.addElement({id:context.id,htmlElement:htmlElement})}}>
+        <SelectableItem onClick={()=>{(context?.elementMethods?.changeId());
+                                    context?.elementMethods?.addElement({id:context.id,htmlElement:htmlElement})}}>
             {text}
         </SelectableItem>
     )

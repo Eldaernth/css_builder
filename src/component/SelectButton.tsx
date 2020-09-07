@@ -11,7 +11,7 @@ function SelectButton({text,htmlElement}:Props) {
     const context  = React.useContext(ElementContext);
     return (
         <SelectableItem onClick={()=>{(context?.elementMethods?.changeId());
-                                    context?.elementMethods?.addElement({id:context.id,htmlElement:htmlElement})}}>
+                                    context?.elementMethods?.addElement({id:context.id,name:text,htmlElement:htmlElement})}}>
             {text}
         </SelectableItem>
     )

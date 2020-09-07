@@ -1,8 +1,9 @@
 import React from 'react'
-import {Container,Builder,Menu,CreateMenu,ElementSelectContainer,Title} from '../style/Css_Builder_styles'
+import {Container,Builder,Menu,MenuPart,ElementSelectContainer,Title} from '../style/Css_Builder_styles'
 import Helmet from "react-helmet"
 import {ElementContext} from '../context/ElementContext'
 import SelectElements from '../component/SelectElements'
+import PropertiesMenu from '../component/PropertiesMenu'
 
 function Css_Builder() {
     const context = React.useContext(ElementContext);
@@ -16,18 +17,21 @@ function Css_Builder() {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
             </Helmet>
             <Builder>
-            {context?.element?.map((item)=>
+            {context?.elements?.map((item)=>
              item.htmlElement)}
             </Builder>
             <Menu>
-                <CreateMenu>
+                <MenuPart>
                     <Title>Create Element</Title>  
                     <ElementSelectContainer>
                         {elementName.map((name)=>(
-                            <SelectElements name={name} id={context?.id}/>
+                            <SelectElements name={name} elementId={context?.id}/>
                         ))}
                     </ElementSelectContainer>
-                </CreateMenu>
+                </MenuPart>
+                <MenuPart>
+                <PropertiesMenu/>
+                </MenuPart>
             </Menu>
         </Container>
     )

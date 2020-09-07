@@ -1,16 +1,19 @@
 import React from 'react'
 import SelectButton from './SelectButton'
+import { withTheme } from 'styled-components'
+import {ElementContext} from '../context/ElementContext'
 
 type Props={
     name:string
-    id:number|undefined
+    elementId:number|undefined
 }
 
-function SelectElements({name,id}:Props) {
+function SelectElements({name,elementId}:Props) {
+    const context = React.useContext(ElementContext);
     return (
         <SelectButton text={`${name}`}
-                            htmlElement={React.createElement(`${name.toLowerCase()}`,{key:`${id}`,
-                            onClick: () => {console.log()}},"Temp")}/>
+                            htmlElement={React.createElement(`${name.toLowerCase()}`,{key:`${elementId}`,id:`${name}`,
+                            onClick: (e:Event) => {context?.elementMethods?.selectTargetElement(e.target as HTMLElement)}},"Temp")}/>
     )
 }
 

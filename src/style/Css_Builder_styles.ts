@@ -14,9 +14,15 @@ export const Menu = styled.div`
     background-color:#f2f6f8
 `
 
-export const CreateMenu = styled.div`
+export const MenuPart = styled.div`
     width:100%;
-    height:100%;
+    height:50%;
+    overflow:scroll;
+    &::-webkit-scrollbar {
+         display: none;
+    } 
+    -ms-overflow-style: none;
+    scrollbar-width: none;  
 `
 export const ElementSelectContainer = styled.div`
     width:100%;

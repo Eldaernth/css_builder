@@ -4,6 +4,7 @@ import {
   NameInput,
   PropertyInputLabel,
   PropertiesContainer,
+  PropertyInput
 } from "../style/Css_Builder_styles";
 
 type Style = {
@@ -41,32 +42,32 @@ function PropertiesMenu() {
         onChange={(e) => setName(e.target.value)}
       />
       <PropertyInputLabel>Width</PropertyInputLabel>
-      <input
+      <PropertyInput
         type="text"
         onChange={(e) => onStyleChange("width", e.target.value)}
       />
       <PropertyInputLabel>Height</PropertyInputLabel>
-      <input
+      <PropertyInput
         type="text"
         onChange={(e) => onStyleChange("height", e.target.value)}
       />
       <PropertyInputLabel>Background color</PropertyInputLabel>
-      <input
+      <PropertyInput
         type="text"
         onChange={(e) => onStyleChange("backgroundColor", e.target.value)}
       />
       <PropertyInputLabel>Color</PropertyInputLabel>
-      <input
+      <PropertyInput
         type="text"
         onChange={(e) => onStyleChange("color", e.target.value)}
       />
       <PropertyInputLabel>Display</PropertyInputLabel>
-      <input
+      <PropertyInput
         type="text"
         onChange={(e) => onStyleChange("display", e.target.value)}
       />
       <PropertyInputLabel>Border</PropertyInputLabel>
-      <input
+      <PropertyInput
         type="text"
         onChange={(e) => onStyleChange("border", e.target.value)}
       />

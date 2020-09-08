@@ -8,7 +8,7 @@ type elementType = {
 type elementMethods = {
   addElement: (item: elementType) => void;
   changeId: () => void;
-  selectTargetElement:(element:HTMLElement | null) => void;
+  selectTargetElement: (element: HTMLElement | null) => void;
 };
 
 type contextType = {
@@ -29,20 +29,21 @@ export const ElementContext = React.createContext<contextType | undefined>(
 export function ElementContextProvider({ children }: Props) {
   const [id, setId] = React.useState(0);
   const [elements, setElement] = React.useState<elementType[]>([]);
-  const [targetElement, setTargetElement] = React.useState<HTMLElement | null>();
+  const [targetElement,setTargetElement] = React.useState<HTMLElement | null>();
   const elementMethods = {
     addElement: (item: elementType) => {
       setElement((prev) => [...prev, item]);
     },
-    changeId: () => {setId(id + 1)
+    changeId: () => {
+      setId(id + 1);
     },
     selectTargetElement: (element: HTMLElement | null) => {
-        setTargetElement(element);
-    }
+      setTargetElement(element);
+    },
   };
   return (
     <ElementContext.Provider
-      value={{elements, elementMethods, id, targetElement }}
+      value={{ elements, elementMethods, id, targetElement }}
     >
       {children}
     </ElementContext.Provider>
